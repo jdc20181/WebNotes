@@ -1,0 +1,108 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>
+    window.onbeforeunload = function() {
+  return "You are about to leave, Anything not saved will be lost. Do you want to continue?";
+};
+  </script>
+  <script>
+    tinymce.init({
+  selector: 'textarea',
+  height: 500,
+  plugins: 'visualblocks',
+  content_css: 'css/content.css',
+  style_formats: [
+    { title: 'Headers', items: [
+      { title: 'h1', block: 'h1' },
+      { title: 'h2', block: 'h2' },
+      { title: 'h3', block: 'h3' },
+      { title: 'h4', block: 'h4' },
+      { title: 'h5', block: 'h5' },
+      { title: 'h6', block: 'h6' }
+    ] },
+
+    { title: 'Blocks', items: [
+      { title: 'p', block: 'p' },
+      { title: 'div', block: 'div' },
+      { title: 'pre', block: 'pre' }
+    ] },
+
+    { title: 'Containers', items: [
+      { title: 'section', block: 'section', wrapper: true, merge_siblings: false },
+      { title: 'article', block: 'article', wrapper: true, merge_siblings: false },
+      { title: 'blockquote', block: 'blockquote', wrapper: true },
+      { title: 'hgroup', block: 'hgroup', wrapper: true },
+      { title: 'aside', block: 'aside', wrapper: true },
+      { title: 'figure', block: 'figure', wrapper: true }
+    ] }
+  ],
+ });
+  </script>
+</head>
+<body>
+<html>
+<body>
+ 
+<table>
+    <tr><td>Text to Save:</td></tr>
+    <tr>
+        <td colspan="3">
+            <textarea id="inputTextToSave" cols="80" rows="25"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>Filename to Save As:</td>
+        <td><input id="inputFileNameToSaveAs"></input></td>
+        <td><button onclick="saveTextAsFile()">Save Text to File</button></td>
+    </tr>
+    <tr>
+        <td>Select a File to Load:</td>
+        <td><input type="file" id="fileToLoad"></td>
+        <td><button onclick="loadFileAsText()">Load Selected File</button><td>
+    </tr>
+</table>
+ 
+<script type="text/javascript">
+ 
+function saveTextAsFile()
+{
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+ 
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+ 
+    downloadLink.click();
+}
+ 
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+ 
+function loadFileAsText()
+{
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
+ 
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+        document.getElementById("inputTextToSave").value = textFromFileLoaded;
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+}
+ 
+</script>
+  <p>Warning: Refreshing will delete anything inside the textbox. </p>
+ 
+</body>
+</html>
