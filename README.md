@@ -1,5 +1,10 @@
-# WebNotes
-Write online with this extensive Text Editor 
+#Version 0.1.2
+
+ - Bug fixes 
+ - Added viewports (Experimental)
+ 
+I am also starting the mobile version, which will be easier to use. 
+
 
 #About 
 
@@ -16,7 +21,7 @@ A Simple Browser Based Text Editor with Saving compatibilities
   - HTML5
   - JS
   - CSS3
-  - <a href="https://www.tinymce.com/">Tiny MCE </a> *Text Editor component*
+  - <a href="https://www.tinymce.com/">Tiny MCE </a> *Text Editor formatting component*
   
 #Development
 
