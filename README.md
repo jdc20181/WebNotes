@@ -1,3 +1,12 @@
+#Version 0.2.0 
+
+ - Initial release
+ 
+Got many things done so it is safe for the first release.
+
+A developer's setup guide is pretty much everything listed in the powered by section in this readme. The project is useable and intended to be used from the project site. 
+
+
 #Version 0.1.2
 
  - Bug fixes 
