@@ -1,0 +1,14 @@
+.content {
+    max-width: 500px;
+    margin:auto;
+    background: white;
+    padding: 10px;
+    Text-align:center;
+}
+@media only screen and (max-device-width : 320px)
+   .content {
+    max-width: 250px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
