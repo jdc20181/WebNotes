@@ -5,6 +5,9 @@
     padding: 10px;
     Text-align:center;
 }
+body {
+    background: #555;
+}
 @media only screen and (max-device-width : 320px)
    .content {
     max-width: 250px;
