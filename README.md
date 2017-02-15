@@ -1,4 +1,4 @@
-#Version 0.2.1 Planned!
+#Version 0.2.1 *Released!!*
 
 See all the details in this [wiki](https://github.com/jdc20181/WebNotes/wiki/Version-0.2.1-Planned).
 
