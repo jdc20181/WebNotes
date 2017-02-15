@@ -1,5 +1,12 @@
 #Version 0.2.1 *Released!!*
 
+*Patch 0.2.1.1*
+
+This will add the improvments disabling the ability to both save and change text while the saving process occurs, which is also disabled by google, but taking extra precautions in needed. 
+
+
+
+*Initial Release*
 See all the details in this [wiki](https://github.com/jdc20181/WebNotes/wiki/Version-0.2.1-Planned).
 
 #Version 0.2.0 
